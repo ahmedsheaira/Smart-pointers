@@ -1,12 +1,12 @@
 #include "unique_ptr.hpp"
 
-Foo::Foo(int x) : x(x) {
+UniqueFoo::UniqueFoo(int x) : x(x) {
 }
 
-int Foo::get_x() {
+int UniqueFoo::get_x() {
     return x;
 }
 
-Foo::~Foo() {
-    cout << "Foo Dest" << endl;
+UniqueFoo::~UniqueFoo() {
+    cout << "UniqueFoo Dest" << endl;
 }

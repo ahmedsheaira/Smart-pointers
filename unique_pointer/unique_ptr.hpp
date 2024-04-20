@@ -3,11 +3,11 @@
 
 using namespace std;
 
-class Foo {
+class UniqueFoo {
 private:
     int x;
 public:
-    Foo(int x);
+    UniqueFoo(int x);
     int get_x();
-    ~Foo();
+    ~UniqueFoo();
 };
