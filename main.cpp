@@ -1,6 +1,7 @@
 #include <iostream>
 #include "pointer/pointer.hpp"
 #include "unique_pointer/unique_ptr.hpp"
+#include "shared_pointer/shared_ptr.hpp"
 
 int main() {
     cout << "This is Pointer Demo!" << endl;
@@ -22,6 +23,15 @@ int main() {
     // uptr1 = uptr2; FAIL : This will fail beacuse you can not copy ownership.
     unique_ptr<UniqueFoo> uptr3 = std::move(uptr1);  // It will pass because moving ownership is allowed.
     cout << uptr3->get_x() << endl;
+
+    cout << "This is Shared Pointer Demo!!" << endl;
+    shared_ptr<SharedFoo> sptr(new SharedFoo(10));
+    cout << sptr->get_x() << endl;
+    // Show how many places that is used
+    cout << "Numbers of shared pointers is " << sptr.use_count() << endl;
+    shared_ptr<SharedFoo> sptr1 = sptr;
+    cout << "Numbers of shared pointers is " << sptr.use_count() << endl;
+    cout << sptr1->get_x() << endl;
 
     return 0;
 }
